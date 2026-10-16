@@ -115,6 +115,32 @@
       margin-top: 16px;
     }
 
+    .edu-wide { grid-column: 1 / -1; }
+    .edu-wide:hover { transform: none; }
+    .edu-wide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 4vw, 48px);
+    }
+    .edu-body {
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+    .edu-body strong { color: var(--text); font-weight: 500; }
+    .inline-link { color: var(--accent); border-bottom: 1px solid var(--accent-light); }
+    .inline-link:hover { color: var(--text); }
+    .club-list { display: flex; flex-direction: column; margin-top: 4px; }
+    .club-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .club-item:last-child { border-bottom: none; }
+    .club-name { font-family: var(--serif); font-size: 1.05rem; color: var(--text); }
+    .club-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
+
     /* Skills */
     .skills-grid {
       display: grid;
@@ -197,6 +223,7 @@
     }
     @media (max-width: 640px) {
       .edu-grid { grid-template-columns: 1fr; }
+      .edu-wide-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -213,6 +240,8 @@
         <a href="../experience/index.html"   class="nav-link">Experience</a>
         <a href="../involvement/index.html"  class="nav-link">Involvement</a>
         <a href="../projects/index.html"     class="nav-link">Projects</a>
+        <a href="../writing/index.html"     class="nav-link">Writing</a>
+        <a href="../dance/index.html"       class="nav-link">Dance</a>
         <a href="../contact/index.html"      class="nav-link btn btn-outline" style="padding:8px 20px;">Connect</a>
       </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
@@ -226,6 +255,8 @@
     <a href="../experience/index.html"  class="nav-mobile-link">Experience</a>
     <a href="../involvement/index.html" class="nav-mobile-link">Involvement</a>
     <a href="../projects/index.html"    class="nav-mobile-link">Projects</a>
+    <a href="../writing/index.html"    class="nav-mobile-link">Writing</a>
+    <a href="../dance/index.html"      class="nav-mobile-link">Dance</a>
     <a href="../contact/index.html"     class="nav-mobile-link">Connect</a>
   </div>
 
@@ -254,7 +285,7 @@
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M7 1C4.79 1 3 2.79 3 5c0 3.5 4 8 4 8s4-4.5 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 7 3a1.5 1.5 0 0 1 0 3z" fill="currentColor"/>
               </svg>
-              Montréal, QC &amp; Houston, TX
+              Montréal, QC · Open to NYC &amp; Houston
             </div>
           </div>
 
@@ -269,7 +300,7 @@
 
             <p>At McGill, I've tried to do work that actually moves things. As Chief Executive Communications Officer at the Undergraduate Law Review, I manage editorial pipelines and direct strategy across a publication read by hundreds. On the CaPS Advisory Board, I've helped shape how a major university career services office reaches students. And through my current research role at MOGILab, I'm contributing to peer-reviewed work on pain perception and social modulation with PI Jeffrey Mogil.</p>
 
-            <p>I'm building toward a career that integrates rigorous analysis with institutional impact — whether that's in management consulting, research strategy, or product at the intersection of psychology and technology. I'm drawn to organizations that take ideas seriously and hold themselves to high standards. I'm currently finishing my B.A. (graduating December 2026) and am actively exploring next steps in consulting and graduate programs.</p>
+            <p>I'm building toward a career that integrates rigorous analysis with institutional impact — whether that's in management consulting, research strategy, or product at the intersection of psychology and technology. I'm drawn to organizations that take ideas seriously and hold themselves to high standards. I'm currently finishing my B.A. (graduating December 2026) and am available full-time from January 2027 — with work authorization in the U.S., Singapore, and the U.K. — for roles in New York City and Houston.</p>
 
             <div style="margin-top:36px; display:flex; gap:16px; flex-wrap:wrap;">
               <a href="../experience/index.html" class="btn btn-primary">See My Experience</a>
@@ -293,7 +324,7 @@
 
         <div class="edu-grid reveal reveal-delay-1">
           <div class="edu-card">
-            <div class="edu-year">2023 – 2026 · Montréal, QC</div>
+            <div class="edu-year">2023 – Dec 2026 · Montréal, QC</div>
             <div class="edu-school">
               <a href="https://reporter.mcgill.ca/mcgill-no-1-in-canada-in-2026-qs-world-university-rankings/" target="_blank" rel="noopener">
                 McGill University
@@ -310,7 +341,7 @@
           </div>
 
           <div class="edu-card">
-            <div class="edu-year">2019 – 2023</div>
+            <div class="edu-year">2019 – 2023 · Online · Redwood City, CA</div>
             <div class="edu-school">
               <a href="https://onlinehighschool.stanford.edu/" target="_blank" rel="noopener">
                 Stanford University Online High School
@@ -318,10 +349,60 @@
             </div>
             <div class="edu-degree">
               High School Diploma<br>
-              Rigorous seminar-based curriculum; Stanford-affiliated faculty
+              Live, seminar-style classes taught by PhD-level faculty<br>
+              <span style="color:var(--accent);font-weight:500;">GPA: 3.8 / 4.0</span>
             </div>
             <div class="edu-badge">
-              <span class="badge badge-sage">Stanford-Affiliated</span>
+              <span class="badge badge-sage">Top 10 U.S. Private High School · Niche</span>
+            </div>
+          </div>
+
+          <!-- Stanford OHS: in depth -->
+          <div class="edu-card edu-wide">
+            <div class="edu-wide-grid">
+              <div>
+                <div class="edu-year">Stanford OHS · In Depth</div>
+                <div class="edu-school">A university-level high school.</div>
+                <p class="edu-body">Stanford Online High School is an accredited independent school run within Stanford University for academically advanced students in grades 7–12, with students from across the U.S. and around the world. Classes are small, live, discussion-based seminars, not recorded lectures. Most instructors hold doctorates, and every student completes a required philosophy and critical-reasoning core. Advanced students take university-level coursework.</p>
+                <p class="edu-body">It is consistently ranked among the best private high schools in America. In 2025, Niche ranked it <strong>#10 nationally</strong> and <strong>#2 in California</strong>. There I wrote my first full research paper, on access to defibrillators, which you can read on my <a href="../writing/index.html" class="inline-link">Writing</a> page.</p>
+              </div>
+              <div>
+                <div class="edu-year">Leadership · Student Clubs I Ran</div>
+                <div class="club-list">
+                  <div class="club-item">
+                    <span class="club-name">Dance Club</span>
+                    <span class="club-desc">A space for dancers across time zones to share technique, choreography, and performance.</span>
+                  </div>
+                  <div class="club-item">
+                    <span class="club-name">Criminal &amp; Forensic Psychology Club</span>
+                    <span class="club-desc">Case studies on criminal behavior, profiling, and the psychology behind the justice system.</span>
+                  </div>
+                  <div class="club-item">
+                    <span class="club-name">Greek Mythology &amp; Ancient Cultures Club</span>
+                    <span class="club-desc">Discussions of myth, classical texts, and the ancient civilizations behind them.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duke TIP -->
+          <div class="edu-card edu-wide">
+            <div class="edu-wide-grid">
+              <div>
+                <div class="edu-year">2018 · Grade 7</div>
+                <div class="edu-school">
+                  <a href="https://tip.duke.edu/" target="_blank" rel="noopener">Duke University Talent Identification Program (TIP)</a>
+                </div>
+                <div class="edu-degree">7th Grade Talent Search · Qualifier</div>
+                <div class="edu-badge">
+                  <span class="badge badge-accent">Above-Level SAT/ACT in Grade 7</span>
+                </div>
+              </div>
+              <div>
+                <p class="edu-body">Duke TIP was Duke University's nonprofit program for identifying and serving academically gifted students. Its 7th Grade Talent Search invited only students who scored at or above the <strong>95th percentile</strong> on a grade-level standardized test.</p>
+                <p class="edu-body">Qualifiers then took the <strong>SAT or ACT in seventh grade</strong>, the same exam college-bound high school juniors and seniors take. The above-level test measured how far a student's reasoning ran ahead of their grade, and it opened access to TIP's advanced academic programs and recognition.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -413,6 +494,10 @@
             <div class="skill-item">
               <span class="skill-name">Cheerleading (Level 7 Flyer)</span>
               <span class="skill-level">Competitive</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Taekwondo</span>
+              <span class="skill-level">Black Belt</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">CPR / AED</span>
