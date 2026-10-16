@@ -5,15 +5,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- Active nav link ---
-  const path = window.location.pathname;
+  const normalize = p => p.replace(/index\.html$/, '');
+  const path = normalize(window.location.pathname);
   document.querySelectorAll('.nav-link, .nav-mobile-link').forEach(link => {
-    const href = link.getAttribute('href');
-    const isHome = (href === '/' || href === '/index.html' || href === '../index.html');
-    const isRoot = (path === '/' || path.endsWith('index.html'));
-
-    if (isHome && isRoot) {
-      link.classList.add('active');
-    } else if (!isHome && href && path.includes(href.replace('../', '').replace('/index.html', ''))) {
+    if (normalize(new URL(link.href).pathname) === path) {
       link.classList.add('active');
     }
   });

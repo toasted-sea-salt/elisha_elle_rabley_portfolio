@@ -117,7 +117,7 @@ p.large { font-size: clamp(1rem, 1.5vw, 1.125rem); }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 28px;
 }
 
 .nav-link {
@@ -371,9 +371,12 @@ footer {
 .weight-500  { font-weight: 500; }
 
 /* === RESPONSIVE === */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
+}
+
+@media (max-width: 768px) {
 
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
