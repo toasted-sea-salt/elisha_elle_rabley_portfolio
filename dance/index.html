@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dance &amp; Athletics — Elle Rabley</title>
+  <meta name="description" content="Elle Rabley's dance and athletic background — Joffrey Ballet School NYC, Vitacca, Houston Ballet, METdance, HC2, Les Grands Ballets, a Taekwondo black belt, and university cheer." />
+  <meta property="og:title"       content="Dance &amp; Athletics — Elle Rabley" />
+  <meta property="og:description" content="Pre-professional ballet and contemporary training from Houston to New York, a Taekwondo black belt, and a lifetime of sport." />
+  <meta property="og:type"        content="website" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    /* ── DANCE-SPECIFIC ── */
+
+    /* Intro stats */
+    .dance-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      overflow: hidden;
+    }
+    .dance-stat {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .dance-stat:last-child { border-right: none; }
+    .dance-stat-num {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .dance-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Training list */
+    .training-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+    }
+    .training-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(24px, 4vw, 56px);
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .training-meta .label { display: block; margin-bottom: 10px; }
+    .training-city {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .training-org {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .training-program {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .training-about {
+      margin-bottom: 10px;
+    }
+    .training-about strong { color: var(--text); font-weight: 500; }
+    .training-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .training-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-light);
+    }
+
+    /* Now: Montréal */
+    .now-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .now-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+    .now-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .now-card h3 { font-size: 1.25rem; margin: 10px 0 10px; }
+    .now-card p { font-size: 0.9rem; }
+
+    /* Athletics */
+    .athletics-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 20px;
+    }
+    .athletic-feature {
+      background: var(--text);
+      border-radius: var(--radius-md);
+      padding: clamp(32px, 4vw, 48px);
+      color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .athletic-feature .label { color: rgba(249,247,244,0.4); }
+    .af-item h3 { color: var(--bg); margin: 6px 0 8px; }
+    .af-item p { color: rgba(249,247,244,0.65); font-size: 0.925rem; }
+    .af-item + .af-item {
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .athletic-past {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: clamp(32px, 4vw, 48px);
+    }
+    .athletic-past h3 { margin: 10px 0 20px; }
+    .past-list { display: flex; flex-direction: column; }
+    .past-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.925rem;
+    }
+    .past-item:last-child { border-bottom: none; }
+    .past-name { color: var(--text); }
+    .past-when {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+
+    /* Takeaway strip */
+    .takeaway {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(24px, 4vw, 48px);
+    }
+    .takeaway h4 { margin-bottom: 10px; }
+    .takeaway p { font-size: 0.925rem; }
+
+    @media (max-width: 900px) {
+      .dance-stats { grid-template-columns: 1fr 1fr; }
+      .dance-stat:nth-child(2) { border-right: none; }
+      .dance-stat:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .now-grid { grid-template-columns: 1fr; }
+      .athletics-layout { grid-template-columns: 1fr; }
+      .takeaway { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .training-item { grid-template-columns: 1fr; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════ NAV ════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">ER.</a>
+      <div class="nav-links">
+        <a href="../index.html"              class="nav-link">Home</a>
+        <a href="../about/index.html"        class="nav-link">About</a>
+        <a href="../experience/index.html"   class="nav-link">Experience</a>
+        <a href="../involvement/index.html"  class="nav-link">Involvement</a>
+        <a href="../projects/index.html"     class="nav-link">Projects</a>
+        <a href="../writing/index.html"      class="nav-link">Writing</a>
+        <a href="../dance/index.html"        class="nav-link">Dance</a>
+        <a href="../contact/index.html"      class="nav-link btn btn-outline" style="padding:8px 20px;">Connect</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../index.html"             class="nav-mobile-link">Home</a>
+    <a href="../about/index.html"       class="nav-mobile-link">About</a>
+    <a href="../experience/index.html"  class="nav-mobile-link">Experience</a>
+    <a href="../involvement/index.html" class="nav-mobile-link">Involvement</a>
+    <a href="../projects/index.html"    class="nav-mobile-link">Projects</a>
+    <a href="../writing/index.html"     class="nav-mobile-link">Writing</a>
+    <a href="../dance/index.html"       class="nav-mobile-link">Dance</a>
+    <a href="../contact/index.html"     class="nav-mobile-link">Connect</a>
+  </div>
+
+  <main>
+
+    <!-- ════ PAGE HEADER ════ -->
+    <div class="container">
+      <div class="page-header reveal">
+        <span class="label">Dance &amp; Athletics</span>
+        <h1>Trained like<br><em class="italic text-accent">a professional.</em></h1>
+        <p class="subtitle">Years of pre-professional ballet and contemporary training, from Houston to New York City, plus a black belt, a university cheer team, and a long list of sports along the way. That discipline carries into everything else I do.</p>
+      </div>
+    </div>
+
+    <!-- ════ AT A GLANCE ════ -->
+    <section class="section" style="padding-bottom:0;">
+      <div class="container">
+        <div class="dance-stats reveal">
+          <div class="dance-stat">
+            <div class="dance-stat-num">45+</div>
+            <div class="dance-stat-label">Hours of training a week in Vitacca's accelerated homeschool program</div>
+          </div>
+          <div class="dance-stat">
+            <div class="dance-stat-num">5</div>
+            <div class="dance-stat-label">Pre-professional programs in Houston &amp; New York City</div>
+          </div>
+          <div class="dance-stat">
+            <div class="dance-stat-num">Black Belt</div>
+            <div class="dance-stat-label">Taekwondo</div>
+          </div>
+          <div class="dance-stat">
+            <div class="dance-stat-num">8</div>
+            <div class="dance-stat-label">Sports and disciplines, from fencing to boxing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ PRE-PROFESSIONAL TRAINING ════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Pre-Professional Training</span>
+          <h2>Where I trained.</h2>
+          <p>Ballet and contemporary programs that admit by audition and train dancers for conservatory, university dance, and professional careers.</p>
+        </div>
+
+        <div class="training-list">
+
+          <div class="training-item reveal">
+            <div class="training-meta">
+              <span class="label">New York City</span>
+              <div class="training-city">Ballet · Contemporary</div>
+            </div>
+            <div>
+              <div class="training-org">Joffrey Ballet School</div>
+              <div class="training-program">Pre-Professional Training</div>
+              <p class="training-about">One of America's most storied ballet schools, founded in New York in 1953 by Robert Joffrey, the founder of the Joffrey Ballet. The school trains aspiring professional dancers in classical ballet, contemporary, and jazz, and its alumni dance in companies around the world.</p>
+              <div class="training-tags">
+                <span class="training-tag">Classical Ballet</span>
+                <span class="training-tag">Contemporary</span>
+                <span class="training-tag">Audition-Based</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-item reveal">
+            <div class="training-meta">
+              <span class="label">Houston, TX</span>
+              <div class="training-city">Full-time · 45+ hrs / week</div>
+            </div>
+            <div>
+              <div class="training-org">Vitacca Ballet &amp; School for Dance</div>
+              <div class="training-program">Accelerated Homeschool Division</div>
+              <p class="training-about">Vitacca's audition-only track for homeschooled dancers combines a full academic course load with a professional-level training schedule. At <strong>more than 45 hours a week</strong> in the studio, it is one of the most demanding youth programs in Houston. The curriculum pairs advanced classical ballet with contemporary and modern technique. Vitacca was named a Youth America Grand Prix Outstanding School in 2025.</p>
+              <div class="training-tags">
+                <span class="training-tag">Classical Ballet</span>
+                <span class="training-tag">Pointe</span>
+                <span class="training-tag">Contemporary / Modern</span>
+                <span class="training-tag">Full-Time Track</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-item reveal">
+            <div class="training-meta">
+              <span class="label">Houston, TX</span>
+              <div class="training-city">Summer Intensive</div>
+            </div>
+            <div>
+              <div class="training-org">Houston Ballet Academy</div>
+              <div class="training-program">Summer Intensive</div>
+              <p class="training-about">Houston Ballet is one of the largest professional ballet companies in the United States, and its Academy is a major feeder into the company. The Summer Intensive admits students through a national audition tour. Accepted dancers spend several weeks in daily technique, pointe, variations, and contemporary classes taught by Academy faculty.</p>
+              <div class="training-tags">
+                <span class="training-tag">Ballet Technique</span>
+                <span class="training-tag">Variations</span>
+                <span class="training-tag">National Audition</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-item reveal">
+            <div class="training-meta">
+              <span class="label">Houston, TX</span>
+              <div class="training-city">Contemporary · Jazz · Modern</div>
+            </div>
+            <div>
+              <div class="training-org">METdance</div>
+              <div class="training-program">Pre-Professional Training</div>
+              <p class="training-about">METdance, formerly Houston Metropolitan Dance Company, is a professional contemporary repertory company with its own training center. Its pre-professional program trains young dancers in ballet, pointe, jazz, modern, and contemporary to prepare them for university dance programs and professional careers. Alumni have gone on to schools such as Juilliard.</p>
+              <div class="training-tags">
+                <span class="training-tag">Contemporary</span>
+                <span class="training-tag">Jazz</span>
+                <span class="training-tag">Modern</span>
+                <span class="training-tag">Ballet &amp; Pointe</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-item reveal">
+            <div class="training-meta">
+              <span class="label">Houston, TX</span>
+              <div class="training-city">Pre-Professional Company</div>
+            </div>
+            <div>
+              <div class="training-org">Houston Institute for Contemporary Dance</div>
+              <div class="training-program">HC2 · Houston Contemporary 2</div>
+              <p class="training-about">HC2 is the pre-professional youth company of the Institute for Contemporary Dance and a sister company to the professional Houston Contemporary Dance Company. It is concert-based and non-competitive. Dancers train across multiple styles with professional choreographers and perform throughout Houston, including under the professional company's banner.</p>
+              <div class="training-tags">
+                <span class="training-tag">Contemporary</span>
+                <span class="training-tag">Concert Performance</span>
+                <span class="training-tag">Company Member</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════ STILL DANCING ════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Now · Montréal</span>
+          <h2>Still dancing.</h2>
+          <p>I've kept training alongside my degree, and I've added a new discipline.</p>
+        </div>
+
+        <div class="now-grid reveal reveal-delay-1">
+          <div class="now-card">
+            <span class="label">Ballet</span>
+            <h3>Les Grands Ballets Canadiens</h3>
+            <p>Classes with Les Grands Ballets, Québec's flagship ballet company, founded in Montréal in 1957, to keep my classical technique sharp.</p>
+          </div>
+          <div class="now-card">
+            <span class="label">Contemporary</span>
+            <h3>Montreal Contemporary Dance Studio</h3>
+            <p>Ongoing contemporary training in Montréal, continuing the contemporary work I started at METdance and HC2.</p>
+          </div>
+          <div class="now-card">
+            <span class="label">Combat Sport</span>
+            <h3>Boxing</h3>
+            <p>My current conditioning and combat training. It's a natural next step after years of Taekwondo, and it rewards the same footwork and focus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════ ATHLETICS ════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Athletics</span>
+          <h2>A lifetime of sport.</h2>
+        </div>
+
+        <div class="athletics-layout reveal reveal-delay-1">
+          <div class="athletic-feature">
+            <div class="af-item">
+              <span class="label">Martial Arts</span>
+              <h3>Black Belt, Taekwondo</h3>
+              <p>Earned through years of progressive belt testing in forms, sparring, and breaking. It taught me patience, control, and how to perform under evaluation.</p>
+            </div>
+            <div class="af-item">
+              <span class="label">Team Sport</span>
+              <h3>University Cheer Team</h3>
+              <p>Competitive cheer as a Level 7 flyer, the most advanced skill level. Flying combines a dancer's flexibility and balance with trust in a stunt group.</p>
+            </div>
+          </div>
+
+          <div class="athletic-past">
+            <span class="label">Along the Way</span>
+            <h3>Other sports I've trained in</h3>
+            <div class="past-list">
+              <div class="past-item"><span class="past-name">Gymnastics</span><span class="past-when">Former</span></div>
+              <div class="past-item"><span class="past-name">Fencing</span><span class="past-when">Former</span></div>
+              <div class="past-item"><span class="past-name">Track &amp; Field</span><span class="past-when">Former · Runner</span></div>
+              <div class="past-item"><span class="past-name">Field Hockey</span><span class="past-when">Former</span></div>
+              <div class="past-item"><span class="past-name">Boxing</span><span class="past-when">Current</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════ WHAT IT BUILT ════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Why It Matters</span>
+          <h2>What the studio taught me.</h2>
+        </div>
+        <div class="takeaway reveal reveal-delay-1">
+          <div>
+            <h4>Discipline at Volume</h4>
+            <p>Training 45+ hours a week while keeping up with school taught me to manage time hard, and to show up consistently whether or not I felt like it.</p>
+          </div>
+          <div>
+            <h4>Coachability</h4>
+            <p>Ballet is daily, precise correction. I learned to take feedback without ego and apply it right away. That's the same loop I use in research and product work.</p>
+          </div>
+          <div>
+            <h4>Performing Under Pressure</h4>
+            <p>Auditions, belt tests, and live performance all give you one shot. I'm comfortable being evaluated in the moment, whether that's a stage, a case interview, or a pitch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════ FOOTER ════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Elle Rabley. Built with intent.</span>
+        <div class="footer-links">
+          <a href="mailto:elle.elisha.rabley@gmail.com" class="footer-link">Email</a>
+          <a href="https://www.linkedin.com/in/elisha-elle-rabley-b92aa0346" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="../contact/index.html" class="footer-link">Connect</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+</body>
+</html>
