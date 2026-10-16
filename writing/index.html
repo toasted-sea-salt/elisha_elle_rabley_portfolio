@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing &amp; Research — Elle Rabley</title>
+  <meta name="description" content="Research papers, policy briefs, and writing samples by Elle Rabley — public health policy, political philosophy, and medical research." />
+  <meta property="og:title"       content="Writing &amp; Research — Elle Rabley" />
+  <meta property="og:description" content="Research papers, policy briefs, and writing samples — read or download each one." />
+  <meta property="og:type"        content="website" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    /* ── WRITING-SPECIFIC ── */
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .filter-btn {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border: 1px solid var(--border-dark);
+      border-radius: 100px;
+      color: var(--text-muted);
+      background: transparent;
+      transition: all 0.2s var(--ease);
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { background: var(--text); border-color: var(--text); color: var(--bg); }
+
+    .paper-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .paper {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: clamp(28px, 4vw, 40px);
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: clamp(24px, 4vw, 48px);
+      transition: border-color 0.25s var(--ease);
+    }
+    .paper:hover { border-color: var(--border-dark); }
+    .paper[hidden] { display: none; }
+
+    .paper-kicker {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .paper-title {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .paper-title a { transition: color 0.2s; }
+    .paper-title a:hover { color: var(--accent); }
+    .paper-course {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .paper-summary { font-size: 0.925rem; margin-bottom: 16px; }
+    .paper-points {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .paper-point {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .paper-point::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.65em;
+      width: 6px; height: 1px;
+      background: var(--accent);
+    }
+
+    .paper-side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-left: 1px solid var(--border);
+      padding-left: clamp(20px, 3vw, 32px);
+    }
+    .paper-fact .label { display: block; margin-bottom: 4px; }
+    .paper-fact-value { font-size: 0.875rem; color: var(--text); }
+    .paper-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .paper-actions .btn { justify-content: center; padding: 11px 16px; }
+
+    .coming-soon {
+      border: 1px dashed var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: clamp(28px, 4vw, 40px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .coming-soon h3 { margin-bottom: 6px; }
+    .coming-soon p { font-size: 0.9rem; max-width: 520px; }
+
+    @media (max-width: 800px) {
+      .paper { grid-template-columns: 1fr; }
+      .paper-side {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .paper-actions { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; }
+      .paper-actions .btn { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════ NAV ════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">ER.</a>
+      <div class="nav-links">
+        <a href="../index.html"              class="nav-link">Home</a>
+        <a href="../about/index.html"        class="nav-link">About</a>
+        <a href="../experience/index.html"   class="nav-link">Experience</a>
+        <a href="../involvement/index.html"  class="nav-link">Involvement</a>
+        <a href="../projects/index.html"     class="nav-link">Projects</a>
+        <a href="../writing/index.html"      class="nav-link">Writing</a>
+        <a href="../dance/index.html"        class="nav-link">Dance</a>
+        <a href="../contact/index.html"      class="nav-link btn btn-outline" style="padding:8px 20px;">Connect</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../index.html"             class="nav-mobile-link">Home</a>
+    <a href="../about/index.html"       class="nav-mobile-link">About</a>
+    <a href="../experience/index.html"  class="nav-mobile-link">Experience</a>
+    <a href="../involvement/index.html" class="nav-mobile-link">Involvement</a>
+    <a href="../projects/index.html"    class="nav-mobile-link">Projects</a>
+    <a href="../writing/index.html"     class="nav-mobile-link">Writing</a>
+    <a href="../dance/index.html"       class="nav-mobile-link">Dance</a>
+    <a href="../contact/index.html"     class="nav-mobile-link">Connect</a>
+  </div>
+
+  <main>
+
+    <!-- ════ PAGE HEADER ════ -->
+    <div class="container">
+      <div class="page-header reveal">
+        <span class="label">Writing &amp; Research</span>
+        <h1>Papers &amp;<br><em class="italic text-accent">writing samples.</em></h1>
+        <p class="subtitle">Policy briefs, research papers, and philosophy essays, each available to read in your browser or download as a PDF.</p>
+      </div>
+    </div>
+
+    <!-- ════ PAPERS ════ -->
+    <section class="section">
+      <div class="container">
+
+        <div class="filter-bar reveal" role="group" aria-label="Filter by type">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="policy">Policy</button>
+          <button class="filter-btn" data-filter="research">Research</button>
+          <button class="filter-btn" data-filter="philosophy">Philosophy</button>
+        </div>
+
+        <div class="paper-list">
+
+          <!-- Red Dye No. 3 -->
+          <article class="paper reveal" data-type="policy">
+            <div>
+              <div class="paper-kicker">
+                <span class="badge badge-accent">Policy Brief</span>
+                <span class="badge badge-sage">Public Health × Trade</span>
+              </div>
+              <h2 class="paper-title"><a href="../assets/papers/rabley-red-dye-3-policy-blueprint.pdf" target="_blank" rel="noopener">Removing Red Dye No. 3 from Canada's Food Supply: A Policy Blueprint for the Minister of Health</a></h2>
+              <div class="paper-course">CANS 402 · McGill University · Winter 2026</div>
+              <p class="paper-summary">A strategy memo addressed to Canada's Minister of Health. It recommends removing Erythrosine (Red Dye No. 3), a colourant linked to cancer in animal studies, from Canada's permitted food colours by 2027 and from pharmaceuticals by 2028, ahead of the U.S. FDA's ban.</p>
+              <div class="paper-points">
+                <div class="paper-point">Applies Kingdon's Multiple Streams Framework to show a policy window opened by the July 2026 CUSMA renewal and U.S.–Canada trade tensions.</div>
+                <div class="paper-point">Maps a regulatory path that needs no Act of Parliament: a Governor in Council amendment through Canada Gazette I and II.</div>
+                <div class="paper-point">Builds a Cabinet coalition with the Trade and Finance ministers, and a health-equity framing for children and low-income communities.</div>
+                <div class="paper-point">Rebuts the "market will reformulate" objection by requiring natural substitutes over Red Dye 40.</div>
+              </div>
+            </div>
+            <aside class="paper-side">
+              <div class="paper-fact"><span class="label">Length</span><span class="paper-fact-value">17 pages</span></div>
+              <div class="paper-fact"><span class="label">Sources</span><span class="paper-fact-value">60 citations</span></div>
+              <div class="paper-actions">
+                <a href="../assets/papers/rabley-red-dye-3-policy-blueprint.pdf" target="_blank" rel="noopener" class="btn btn-primary">Read</a>
+                <a href="../assets/papers/rabley-red-dye-3-policy-blueprint.pdf" download class="btn btn-outline">Download PDF</a>
+              </div>
+            </aside>
+          </article>
+
+          <!-- AED -->
+          <article class="paper reveal" data-type="research">
+            <div>
+              <div class="paper-kicker">
+                <span class="badge badge-accent">Research Paper</span>
+                <span class="badge badge-sage">Cardiology · Health Equity</span>
+              </div>
+              <h2 class="paper-title"><a href="../assets/papers/rabley-aed-accessibility.pdf" target="_blank" rel="noopener">Mitigating a Global Health Crisis: Proposals Towards Improving Automated External Defibrillator Accessibility</a></h2>
+              <div class="paper-course">Advanced Topics in Biological Research Writing · Stanford Online High School · 2022–2023</div>
+              <p class="paper-summary">Sudden cardiac arrest kills about 9 in 10 people it strikes outside a hospital, and about 70% of those arrests happen at home, away from public AEDs. This paper reviews the cardiac physiology behind defibrillation and the racial and income gaps in survival. It then proposes practical ways to put AEDs within reach during the critical minutes.</p>
+              <div class="paper-points">
+                <div class="paper-point">Proposes "Medical Emergency Boxes," neighborhood AED stations modeled on Little Free Libraries, with placement rules for suburban and rural areas.</div>
+                <div class="paper-point">Argues for a built-in "Find My AED" phone feature, and for smartwatch software that alerts contacts or 911 when it detects cardiac arrest.</div>
+                <div class="paper-point">Informed by the Stanford Surgical Skills Summer Internship (2022) and consultation with Stanford cardiologists.</div>
+              </div>
+            </div>
+            <aside class="paper-side">
+              <div class="paper-fact"><span class="label">Length</span><span class="paper-fact-value">12 pages</span></div>
+              <div class="paper-fact"><span class="label">Sources</span><span class="paper-fact-value">86 citations</span></div>
+              <div class="paper-actions">
+                <a href="../assets/papers/rabley-aed-accessibility.pdf" target="_blank" rel="noopener" class="btn btn-primary">Read</a>
+                <a href="../assets/papers/rabley-aed-accessibility.pdf" download class="btn btn-outline">Download PDF</a>
+              </div>
+            </aside>
+          </article>
+
+          <!-- Electoral reform -->
+          <article class="paper reveal" data-type="philosophy policy">
+            <div>
+              <div class="paper-kicker">
+                <span class="badge badge-accent">Policy Proposal</span>
+                <span class="badge badge-sage">Political Philosophy</span>
+              </div>
+              <h2 class="paper-title"><a href="../assets/papers/rabley-electoral-temporal-reform.pdf" target="_blank" rel="noopener">Innovating the Electoral System for the Modern Era: A Proposal for Temporal Reform in the U.S. Presidential Election</a></h2>
+              <div class="paper-course">PHIL 446 · Contemporary Issues in Political Philosophy · McGill University · Prof. Daniel Weinstock · April 2024</div>
+              <p class="paper-summary">Proposes extending U.S. Election Day into a 72-hour, Sunday-to-Tuesday voting window to reduce turnout gaps driven by work schedules, commutes, and long lines. It pairs the extension with a Live Election Tracker (LET), a real-time public results platform.</p>
+              <div class="paper-points">
+                <div class="paper-point">Designs LET to build trust by removing the "black box" between counting and certification, and to fight voter fatigue with civic-education features.</div>
+                <div class="paper-point">Engages the strongest objections head-on: unequal access, information gaps between voting days, strategic voting, and the bandwagon effect.</div>
+              </div>
+            </div>
+            <aside class="paper-side">
+              <div class="paper-fact"><span class="label">Length</span><span class="paper-fact-value">5 pages</span></div>
+              <div class="paper-fact"><span class="label">Includes</span><span class="paper-fact-value">Interface mockups</span></div>
+              <div class="paper-actions">
+                <a href="../assets/papers/rabley-electoral-temporal-reform.pdf" target="_blank" rel="noopener" class="btn btn-primary">Read</a>
+                <a href="../assets/papers/rabley-electoral-temporal-reform.pdf" download class="btn btn-outline">Download PDF</a>
+              </div>
+            </aside>
+          </article>
+
+          <!-- Influencer culture -->
+          <article class="paper reveal" data-type="philosophy">
+            <div>
+              <div class="paper-kicker">
+                <span class="badge badge-accent">Essay</span>
+                <span class="badge badge-sage">Political Philosophy × Media</span>
+              </div>
+              <h2 class="paper-title"><a href="../assets/papers/rabley-influencer-culture-marx.pdf" target="_blank" rel="noopener">Exploring Multidimensional Influencer Culture through a Marxian Lens</a></h2>
+              <div class="paper-course">PHIL 445 · 19th-Century Political Philosophy · McGill University · April 2024</div>
+              <p class="paper-summary">Reads modern influencer culture through Marx's theory of commodity fetishism in <em>Capital</em>. The essay argues that influencers commodify identity and lifestyle in two ways, Influencer Marketing and Influencer Branding, and in doing so obscure the social relationship with their audience.</p>
+              <div class="paper-points">
+                <div class="paper-point">Treats "likes" as a social currency, which explains why people with no paid following still post.</div>
+                <div class="paper-point">Looks at the consequences for young audiences and for influencers' own sense of identity.</div>
+              </div>
+            </div>
+            <aside class="paper-side">
+              <div class="paper-fact"><span class="label">Length</span><span class="paper-fact-value">4 pages</span></div>
+              <div class="paper-fact"><span class="label">Sources</span><span class="paper-fact-value">16 citations</span></div>
+              <div class="paper-actions">
+                <a href="../assets/papers/rabley-influencer-culture-marx.pdf" target="_blank" rel="noopener" class="btn btn-primary">Read</a>
+                <a href="../assets/papers/rabley-influencer-culture-marx.pdf" download class="btn btn-outline">Download PDF</a>
+              </div>
+            </aside>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════ DECKS ════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Slide Decks</span>
+          <h2>Presentations.</h2>
+        </div>
+        <div class="coming-soon reveal reveal-delay-1">
+          <div>
+            <h3>Decks coming soon.</h3>
+            <p>Case presentations and pitch decks will be added here. In the meantime, I'm happy to walk through any of my work live.</p>
+          </div>
+          <a href="../contact/index.html" class="btn btn-outline">Request a Walkthrough</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════ FOOTER ════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Elle Rabley. Built with intent.</span>
+        <div class="footer-links">
+          <a href="mailto:elle.elisha.rabley@gmail.com" class="footer-link">Email</a>
+          <a href="https://www.linkedin.com/in/elisha-elle-rabley-b92aa0346" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="../contact/index.html" class="footer-link">Connect</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+        document.querySelectorAll('.paper').forEach(p => {
+          p.hidden = f !== 'all' && !p.dataset.type.split(' ').includes(f);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
