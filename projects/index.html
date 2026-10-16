@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Elle Rabley</title>
-  <meta name="description" content="Projects — Campus Commons, LetterLoft, CardLanes. Building real products from the ground up." />
+  <meta name="description" content="Projects — Campus Commons, The Anti-Cookie Co., Cottage Business Lab, Atelier, Elle's Guide, and more. Building real products from the ground up." />
   <meta property="og:title"       content="Projects — Elle Rabley" />
-  <meta property="og:description" content="Campus Commons peer-to-peer marketplace, LetterLoft, and CardLanes — products built from scratch." />
+  <meta property="og:description" content="A campus marketplace, a food brand, a nonprofit, AI tools, and playable games — products built from scratch." />
   <meta property="og:type"        content="website" />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="stylesheet" href="../assets/style.css" />
@@ -215,6 +215,18 @@
       flex: 1;
     }
 
+    .proj-learned {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      padding: 12px 14px;
+      background: var(--bg);
+      border-left: 2px solid var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: -4px 0 20px;
+    }
+    .proj-learned strong { color: var(--text); font-weight: 600; }
+
     .proj-stack {
       display: flex;
       flex-wrap: wrap;
@@ -268,6 +280,8 @@
         <a href="../experience/index.html"   class="nav-link">Experience</a>
         <a href="../involvement/index.html"  class="nav-link">Involvement</a>
         <a href="../projects/index.html"     class="nav-link">Projects</a>
+        <a href="../writing/index.html"     class="nav-link">Writing</a>
+        <a href="../dance/index.html"       class="nav-link">Dance</a>
         <a href="../contact/index.html"      class="nav-link btn btn-outline" style="padding:8px 20px;">Connect</a>
       </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
@@ -281,6 +295,8 @@
     <a href="../experience/index.html"  class="nav-mobile-link">Experience</a>
     <a href="../involvement/index.html" class="nav-mobile-link">Involvement</a>
     <a href="../projects/index.html"    class="nav-mobile-link">Projects</a>
+    <a href="../writing/index.html"    class="nav-mobile-link">Writing</a>
+    <a href="../dance/index.html"      class="nav-mobile-link">Dance</a>
     <a href="../contact/index.html"     class="nav-mobile-link">Connect</a>
   </div>
 
@@ -291,7 +307,7 @@
       <div class="page-header reveal">
         <span class="label">Work &amp; Builds</span>
         <h1>Projects<br><em class="italic text-accent">I've shipped.</em></h1>
-        <p class="subtitle">A peer-to-peer campus marketplace, two playable games, and more in progress. Built from scratch — design, code, and concept.</p>
+        <p class="subtitle">A campus marketplace, a food brand, a nonprofit launch lab, AI tools, a live data project, and two playable games. Built from scratch — design, code, and concept.</p>
       </div>
     </div>
 
@@ -370,6 +386,97 @@
               <div class="fp-detail-label">Role</div>
               <div class="fp-detail-value">Founder — product strategy, UX design (Figma), and full-stack development.</div>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════ VENTURES & TOOLS ════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Ventures, Tools &amp; Experiments</span>
+          <h2>More things I've built.</h2>
+          <p>A food brand, a nonprofit, and three web tools. Each one taught me something I couldn't have learned in a classroom.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Anti-Cookie Co. -->
+          <div class="project-card reveal">
+            <div class="proj-type">Consumer Brand · Houston, TX</div>
+            <div class="proj-title">The Anti-Cookie Co.</div>
+            <p class="proj-desc">A small-batch food brand I founded: fudgy date-based bites with 9g of plant protein, no refined sugar, and no nuts, dairy, soy, or gluten. I built the brand and storefront end to end, including six flavors, a "Bite Flight" sampler box, build-your-own boxes, pre-orders, and a customer vote on new flavors.</p>
+            <p class="proj-learned"><strong>What I learned:</strong> product development and pricing, building a brand from nothing, and designing a storefront around how customers actually buy.</p>
+            <div class="proj-stack">
+              <span class="proj-tech">Brand Strategy</span>
+              <span class="proj-tech">Product Development</span>
+              <span class="proj-tech">Pricing</span>
+              <span class="proj-tech">Web Design</span>
+            </div>
+            <a href="https://anticookie.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit the Shop →</a>
+          </div>
+
+          <!-- Cottage Business Lab -->
+          <div class="project-card reveal reveal-delay-1">
+            <div class="proj-type">Nonprofit · Small-Business Launch Lab</div>
+            <div class="proj-title">Cottage Business Lab</div>
+            <p class="proj-desc">A pay-what-you-can nonprofit that helps hobbyists and first-time founders turn rough ideas into real small businesses. It offers help with naming and positioning, one-page business plans, website prototypes, a Virtual Farmers Market directory, free planning and pricing templates, and short founder guides.</p>
+            <p class="proj-learned"><strong>What I learned:</strong> small-business consulting, designing services for people with no budget, and running intake through simple, low-cost workflows.</p>
+            <div class="proj-stack">
+              <span class="proj-tech">Small-Business Consulting</span>
+              <span class="proj-tech">Nonprofit Design</span>
+              <span class="proj-tech">Google Forms &amp; Sheets</span>
+              <span class="proj-tech">Content Strategy</span>
+            </div>
+            <a href="https://toasted-sea-salt.github.io/cottage-business-lab-/index.html" target="_blank" rel="noopener" class="proj-link">Visit the Lab →</a>
+          </div>
+
+          <!-- Elle's Guide -->
+          <div class="project-card reveal">
+            <div class="proj-type">Resource Site · International Students</div>
+            <div class="proj-title">Elle's Guide</div>
+            <p class="proj-desc">A plain-language immigration guide for McGill's international students, built from my own experience navigating the system. It includes step-by-step guides, a "Which Office?" tool that points students to the right campus or government office, student stories, curated resources, and site-wide search.</p>
+            <p class="proj-learned"><strong>What I learned:</strong> information architecture, turning dense bureaucracy into clear UX writing, and researching and checking official sources.</p>
+            <div class="proj-stack">
+              <span class="proj-tech">Information Architecture</span>
+              <span class="proj-tech">UX Writing</span>
+              <span class="proj-tech">Research Synthesis</span>
+            </div>
+            <a href="https://international-students-ellesguide.netlify.app" target="_blank" rel="noopener" class="proj-link">Open Elle's Guide →</a>
+          </div>
+
+          <!-- Atelier -->
+          <div class="project-card reveal reveal-delay-1">
+            <div class="proj-type">AI Web App · Color Analysis &amp; Styling</div>
+            <div class="proj-title">Atelier</div>
+            <p class="proj-desc">An AI personal-stylist app. It runs a seasonal color analysis and body-shape profile, then builds a digital wardrobe from your photos. Claude identifies and tags each piece by category, formality, and pattern. An Outfit Studio, saved looks, and a wishlist turn the analysis into outfits you can actually wear.</p>
+            <p class="proj-learned"><strong>What I learned:</strong> integrating an LLM into a real product, prompt design for image analysis, and building interfaces around AI output.</p>
+            <div class="proj-stack">
+              <span class="proj-tech">Claude API</span>
+              <span class="proj-tech">Prompt Design</span>
+              <span class="proj-tech">JavaScript</span>
+              <span class="proj-tech">UX Design</span>
+            </div>
+            <a href="https://jovial-pasca-e3c07f.netlify.app" target="_blank" rel="noopener" class="proj-link">Try Atelier →</a>
+          </div>
+
+          <!-- Humans Doing Things -->
+          <div class="project-card reveal">
+            <div class="proj-type">Data Storytelling · Live Dashboard</div>
+            <div class="proj-title">Humans Doing Things</div>
+            <p class="proj-desc">"Right Now" is a live portrait of humanity this second: how many people are sleeping, laughing, or falling in love, plus heartbeats, CO₂ emitted, and emails sent. The counters tick in real time, using rates drawn from UN, WHO, and NASA data and written up as short editorial notes.</p>
+            <p class="proj-learned"><strong>What I learned:</strong> turning annual statistics into per-second models, real-time JavaScript rendering, and editorial design for data.</p>
+            <div class="proj-stack">
+              <span class="proj-tech">JavaScript</span>
+              <span class="proj-tech">Data Modeling</span>
+              <span class="proj-tech">Data Visualization</span>
+              <span class="proj-tech">Editorial Design</span>
+            </div>
+            <a href="https://wonderful-tiramisu-18b8ca.netlify.app" target="_blank" rel="noopener" class="proj-link">See It Live →</a>
           </div>
 
         </div>
