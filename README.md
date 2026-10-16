@@ -10,7 +10,7 @@ elle-portfolio/
 ├── about/index.html        → About, Education, Skills, Certifications
 ├── experience/index.html   → Research & Professional Roles
 ├── involvement/index.html  → Campus Leadership & Community
-├── projects/index.html     → Campus Commons, LetterLoft, CardLanes
+├── projects/index.html     → Anti-Cookie Co., Cottage Business Lab, Elle's Guide, Atelier, Right Now, games
 ├── contact/index.html      → Connect
 └── assets/
     ├── style.css           → Shared design system
@@ -80,7 +80,7 @@ Fonts are loaded from Google Fonts in `style.css`. Current pairing:
 | About | `/about/` | Bio, education, skills, certifications |
 | Experience | `/experience/` | 4 research/professional roles, resume download |
 | Involvement | `/involvement/` | 7 leadership roles, citizen science |
-| Projects | `/projects/` | Campus Commons (featured), LetterLoft, CardLanes |
+| Projects | `/projects/` | Anti-Cookie Co., Cottage Business Lab, Elle's Guide, Atelier, Right Now, LetterLoft, CardLanes |
 | Contact | `/contact/` | Email, LinkedIn, availability status |
 
 ---
