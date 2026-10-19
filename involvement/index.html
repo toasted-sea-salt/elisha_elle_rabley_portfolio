@@ -136,6 +136,44 @@
     @media (max-width: 480px) {
       .citizen-grid { grid-template-columns: 1fr; }
     }
+
+    /* Links from cards to the Dance & Athletics page */
+    .inv-more {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      transition: color 0.2s;
+    }
+    .inv-more:hover { color: var(--text); }
+
+    .dance-callout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(24px, 4vw, 56px);
+      background: var(--text);
+      border-radius: var(--radius-md);
+      padding: clamp(32px, 5vw, 56px);
+      transition: transform 0.25s var(--ease);
+    }
+    .dance-callout:hover { transform: translateY(-3px); }
+    .dance-callout-label { color: rgba(249,247,244,0.45); display: block; margin-bottom: 12px; }
+    .dance-callout-title { color: var(--bg); margin-bottom: 12px; }
+    .dance-callout-text { color: rgba(249,247,244,0.65); max-width: 560px; }
+    .dance-callout-btn {
+      flex-shrink: 0;
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+    .dance-callout:hover .dance-callout-btn { background: var(--accent-light); border-color: var(--accent-light); }
+    @media (max-width: 760px) {
+      .dance-callout { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -151,7 +189,7 @@
         <a href="../involvement/index.html"  class="nav-link">Involvement</a>
         <a href="../projects/index.html"     class="nav-link">Projects</a>
         <a href="../writing/index.html"     class="nav-link">Writing</a>
-        <a href="../dance/index.html"       class="nav-link">Dance</a>
+        <a href="../dance/index.html"       class="nav-link">Dance &amp; Athletics</a>
         <a href="../contact/index.html"      class="nav-link btn btn-outline" style="padding:8px 20px;">Connect</a>
       </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
@@ -166,7 +204,7 @@
     <a href="../involvement/index.html" class="nav-mobile-link">Involvement</a>
     <a href="../projects/index.html"    class="nav-mobile-link">Projects</a>
     <a href="../writing/index.html"    class="nav-mobile-link">Writing</a>
-    <a href="../dance/index.html"      class="nav-mobile-link">Dance</a>
+    <a href="../dance/index.html"      class="nav-mobile-link">Dance &amp; Athletics</a>
     <a href="../contact/index.html"     class="nav-mobile-link">Connect</a>
   </div>
 
@@ -296,6 +334,23 @@
             <div class="inv-roles">
               <div class="inv-role bold-role">Level 7 Flyer</div>
             </div>
+            <a href="../dance/index.html" class="inv-more">More on dance &amp; athletics →</a>
+          </div>
+
+          <!-- McGill Salseros -->
+          <div class="inv-card reveal">
+            <div class="inv-card-header">
+              <div>
+                <div class="inv-org">McGill Salseros</div>
+                <span class="badge badge-sage" style="margin-top:4px;">Dance</span>
+              </div>
+              <div class="inv-icon">💃</div>
+            </div>
+            <div class="inv-roles">
+              <div class="inv-role bold-role">Salsa Dancer</div>
+              <div class="inv-role">Partner work, musicality, and improvisation alongside my ballet and contemporary training</div>
+            </div>
+            <a href="../dance/index.html" class="inv-more">More on dance &amp; athletics →</a>
           </div>
 
           <!-- Additional Clubs -->
@@ -314,6 +369,20 @@
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ════ DANCE & ATHLETICS CALLOUT ════ -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <a href="../dance/index.html" class="dance-callout reveal">
+          <div>
+            <span class="label dance-callout-label">Off Campus · Dance &amp; Athletics</span>
+            <h2 class="dance-callout-title">Years of pre-professional training.</h2>
+            <p class="dance-callout-text">Joffrey Ballet School in NYC, Houston Ballet's Summer Intensive, a 45+ hour-a-week pre-professional program, contemporary companies, and a Taekwondo black belt. The discipline behind everything on this page.</p>
+          </div>
+          <span class="btn dance-callout-btn">See Dance &amp; Athletics →</span>
+        </a>
       </div>
     </section>
 
